@@ -1,29 +1,3 @@
-# Programming Assignment 5
-#
-# Don't rename any functions, although feel free to implement any helper functions
-# you find useful.
-#
-# 1) Implement the naive_string_matcher function as specified in its docstring.
-#    This is a variation of the algorithm on page 988 of the textbook.
-#    Read the docstring below carefully so you know what I've changed.
-#
-# 2) Implement the function print_results below.
-#
-# 3) Implement the p_naive_string_matcher function as specified in its docstring.
-#
-# 4) In the time_results function below, implement any code needed to compare the runtimes
-#    of the sequential and parallel version on string of varying lengths.  You will need to
-#    figure out how to generate strings of varying lengths.  Here's one approach to get a really
-#    long string to use as T (long enough that you will almost certainly see a benefit to parallel
-#    implementation.  The complete works of shakespeare is freely available (http://shakespeare.mit.edu/ among
-#    other places).  You might just hardcode a long string by copying and pasting and surrounding with """ and """
-#    to get a multiline string.
-#
-# 5) Answer the following questions here in a comment based on #4:
-#
-#    Q1: After running time_results, fill in this table in this comment for whatever P and T lengths
-#        you tried (make sure you vary lengths from short to longer:
-#        T-length   P-Length   Sequential   Parallel
 #
 # String T Length      String P Length           Sequential Time            Parallel Time    
 #         18                   3               2.4068362902751606e-05     0.2083725811751123
@@ -33,30 +7,14 @@
 #       640016                 3                 0.3737853226017607       0.38125709059441215
 #       864216                 2                 0.4059577950316333       0.46231423144064854
 #
-#
-#    Q2: How do the times (of both versions) vary by string length?  If T is held constant, and pattern P length varied, how does
-#        that affect runtime?  If P length is held constant, and text T length varied, how does that affect runtimes?
-#
 #           For varrying T length, runtime will increase as the legnth of T increases.
 #           For varrying P length, runtime will increase as the length of P increases, but not nearly as much as when T is increased.
 #
-#    Q3: At what lengths of P and/or T is the sequential version faster?
-#
 #           For small values of P and T length, sequential is faster
 #
-#    Q4: At what lengths of P and/or T is the parallel version faster?
-#
 #           When T length is large, parallel version is faster.
-#
-#    Q5: Are the results consistent with the speedup you computed in Problem Set 4?  If not, what do you think caused
-#        the inconsistency with the theoretical speedup?
-#
-#           This is not consistent.  In problem set 4, we said that P should be linear speed up on paper.
-#           Theoreticaly this is fine, but when you add a processor, it slows down time.
-#
-#
-# These are imports you will likely need.  Feel free to add any other imports that are necessary.
-#E.g., you might also need Queue for getting the results back from your processes.
+
+
 from multiprocessing import Process, Array
 import ctypes
 import multiprocessing as mp
